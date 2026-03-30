@@ -46,6 +46,45 @@
 
 <h1 id="mensaje">💀 CAÍSTE 💀</h1>
 
+<video id="video">
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<script>
+function trolleo() {
+  document.querySelector("button").style.display = "none";
+
+  let mensaje = document.getElementById("mensaje");
+  mensaje.style.display = "block";
+
+  setTimeout(() => {
+    mensaje.style.display = "none";
+
+    let v = document.getElementById("video");
+    v.style.display = "block";
+    v.play().catch(e => console.log(e));
+
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    }
+
+  }, 1500);
+}
+</script>
+
+</body>
+</html>      position: absolute;
+      font-size: 40px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="trolleo()">NO TOCAR</button>
+
+<h1 id="mensaje">💀 CAÍSTE 💀</h1>
+
 <video id="19K views · 1.7K reactions ｜ Los memes de la Bocchi uwu on Reels [969609975458838].mp4">
   <source src="19K views · 1.7K reactions ｜ Los memes de la Bocchi uwu on Reels [969609975458838].mp4" type="19K views · 1.7K reactions ｜ Los memes de la Bocchi uwu on Reels [969609975458838].mp4">
 </video>
