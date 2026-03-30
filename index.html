@@ -4,6 +4,7 @@
   <title>No tocar</title>
   <style>
     body {
+      margin: 0;
       background: black;
       color: white;
       display: flex;
@@ -11,11 +12,31 @@
       align-items: center;
       height: 100vh;
       font-family: Arial;
+      overflow: hidden;
     }
+
     button {
       padding: 20px;
-      font-size: 20px;
+      font-size: 25px;
       cursor: pointer;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #video {
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+    }
+
+    #mensaje {
+      position: absolute;
+      font-size: 40px;
+      display: none;
     }
   </style>
 </head>
@@ -23,12 +44,32 @@
 
 <button onclick="trolleo()">NO TOCAR</button>
 
-<audio id="sonido" src="https://www.myinstants.com/media/sounds/vine-boom.mp3"></audio>
+<h1 id="mensaje">💀 CAÍSTE 💀</h1>
+
+<video id="video">
+  <source src="video.mp4" type="video/mp4">
+</video>
 
 <script>
 function trolleo() {
-  document.getElementById("sonido").play();
-  document.body.innerHTML = "<h1>💀 CAÍSTE 💀</h1>";
+  document.querySelector("button").style.display = "none";
+
+  let mensaje = document.getElementById("mensaje");
+  mensaje.style.display = "block";
+
+  setTimeout(() => {
+    mensaje.style.display = "none";
+
+    let v = document.getElementById("video");
+    v.style.display = "block";
+    v.play();
+
+    // pantalla completa (más troll 😈)
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    }
+
+  }, 1500);
 }
 </script>
 
