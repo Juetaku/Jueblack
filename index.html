@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>No tocar</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial;
+    }
+    button {
+      padding: 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="trolleo()">NO TOCAR</button>
+
+<audio id="sonido" src="https://www.myinstants.com/media/sounds/vine-boom.mp3"></audio>
+
+<script>
+function trolleo() {
+  document.getElementById("sonido").play();
+  document.body.innerHTML = "<h1>💀 CAÍSTE 💀</h1>";
+}
+</script>
+
+</body>
+</html>
